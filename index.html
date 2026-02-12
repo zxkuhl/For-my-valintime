@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>valintines lol<3</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+```
+    body {
+        font-family: 'Georgia', serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow-x: hidden;
+        position: relative;
+    }
+
+    /* Floating hearts animation */
+    .heart {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: rgba(255, 105, 180, 0.6);
+        transform: rotate(45deg);
+        animation: float 6s infinite;
+        opacity: 0;
+    }
+
+    .heart:before,
+    .heart:after {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: rgba(255, 105, 180, 0.6);
+        border-radius: 50%;
+    }
+
+    .heart:before {
+        top: -10px;
+        left: 0;
+    }
+
+    .heart:after {
+        top: 0;
+        left: -10px;
+    }
+
+    @keyframes float {
+        0% {
+            opacity: 0;
+            transform: translateY(0) rotate(45deg);
+        }
+        10% {
+            opacity: 1;
+        }
+        90% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+            transform: translateY(-100vh) rotate(45deg);
+        }
+    }
+
+    .container {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 30px;
+        padding: 60px 40px;
+        max-width: 600px;
+        text-align: center;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        position: relative;
+        z-index: 10;
+        animation: slideIn 1s ease-out;
+    }
+
+    @keyframes slideIn {
+        from {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    h1 {
+        font-size: 3em;
+        color: #e91e63;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+        0%, 100% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.05);
+        }
+    }
+
+    .heart-emoji {
+        font-size: 4em;
+        display: inline-block;
+    }
+
+    .message {
+        font-size: 1.3em;
+        color: #555;
+        line-height: 1.8;
+        margin: 30px 0;
+        font-style: italic;
+    }
+
+    .message strong {
+        color: #e91e63;
+        font-weight: bold;
+    }
+
+    .love-note {
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        color: white;
+        padding: 25px;
+        border-radius: 15px;
+        margin-top: 30px;
+        font-size: 1.1em;
+        line-height: 1.6;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .signature {
+        margin-top: 40px;
+        font-size: 1.5em;
+        color: #e91e63;
+        font-family: 'Brush Script MT', cursive;
+    }
+
+    .sparkle {
+        display: inline-block;
+        animation: sparkle 1s infinite alternate;
+    }
+
+    @keyframes sparkle {
+        from {
+            opacity: 0.5;
+            transform: scale(0.8);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1.2);
+        }
+    }
+</style>
+```
+
+</head>
+<body>
+    <div class="container">
+        <div class="heart-emoji">💕</div>
+        <h1>Happy Valentine's Day, Addison!</h1>
+
+```
+    <p class="message">
+        To the most <strong>amazing</strong> person,<br>
+        You make every day brighter just by being you.<br>
+        Your smile lights up my world, and your laugh is my favorite sound.
+    </p>
+
+    <div class="love-note">
+        I'm so grateful for every moment we share together. 
+        You're not just my Valentine—you're my best friend, my confidant, 
+        and the person who makes life so much sweeter. 
+        Here's to us and all the adventures yet to come! 
+        <span class="sparkle">✨</span>
+    </div>
+
+    <p class="signature">
+        Happy Valintimes day(ik i cant spell lol) ❤️
+    </p>
+</div>
+
+<script>
+    // Create floating hearts
+    function createHeart() {
+        const heart = document.createElement('div');
+        heart.className = 'heart';
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+        heart.style.animationDelay = Math.random() * 2 + 's';
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 8000);
+    }
+
+    // Generate hearts periodically
+    setInterval(createHeart, 300);
+
+    // Create initial hearts
+    for (let i = 0; i < 10; i++) {
+        setTimeout(createHeart, i * 200);
+    }
+</script>
+```
+
+</body>
+</html>
